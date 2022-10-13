@@ -10,16 +10,28 @@ Technologies used:
 - Formik
 - Jest (just wrote one test since there is not much business logic)
 
-## Architecture
-
-The UI code architecture has been incpired the [atomic design model](https://atomicdesign.bradfrost.com/chapter-2/) by Brad Forst. The UI is entirely separated to make it able to be extracted from this repo in case it would be reused elsewhere. It is of course written in material ui with few changes, so who would 🤷
-
-The business logic has been put under `src/forms` for the one and only form. The logic is then used in `src/components/ContactForm`, which is also consuming the UI from `src/ui`.
-
 ## How to run
 
 This project was made using CRA, so you can run it locally using `npm run start`. No external APIs are being hit in this application.
 
+When starting to look through the code, I advice you to just start in App.tsx and browse through the components from top-down, as the most complex components are deeper in the component tree.
+
+## Architecture
+
+### UI
+
+The UI code architecture has been incpired the [atomic design model](https://atomicdesign.bradfrost.com/chapter-2/) by Brad Forst. The UI is entirely separated to make it able to be extracted from this repo in case it would be reused elsewhere. It is of course written in material ui with few changes, so who would 🤷.
+
+I prefer nesting components in dot-syntax to make them more readable. This is also done to make the developer prefer going for a compound-component style of development which I believe is much better for scale.
+
+### App logic
+
+The business logic has been put under `src/forms` for the one and only form. The logic is then used in `src/components/ContactForm`, which is also consuming the UI from `src/ui`.
+
 ## What's there todo here?
 
-There are a bunch of TODOs as the application is not fully completed. It's to serve as an early representation of a finished product. Important work to get done is a better abstraction to ease the implementation of new forms without havint to repeat yourself until your eyes and fingers bleed 🩸😭
+There are a bunch of TODOs as the application is not fully completed. It's to serve as an early representation of a finished product.
+
+Mainly components/forms/ContactForm should be refactored to smaller pieces. What I'd like to have done is a better abstraction to ease the implementation of new forms without havint to repeat yourself until your eyes and fingers bleed 🩸😭
+
+However, the hypothetical application may never use more than one form, making my abstraction hell a total unnecessity.
