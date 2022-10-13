@@ -7,7 +7,7 @@ import { Checkbox, CheckboxProps } from "../../../atoms/Inputs/Checkbox";
 export type CheckboxFieldProps = {
   label: FormControlLabelProps["label"];
   name: FormControlLabelProps["name"];
-  value: FormControlLabelProps["value"];
+  value: CheckboxProps["checked"];
   disabled?: FormControlLabelProps["disabled"];
   onChange: CheckboxProps["onChange"];
 };
@@ -24,7 +24,7 @@ export function CheckboxField({
       name={name}
       value={value}
       disabled={disabled}
-      control={<Checkbox onChange={onChange} />}
+      control={<Checkbox onChange={onChange} checked={value} />}
     />
   );
 }

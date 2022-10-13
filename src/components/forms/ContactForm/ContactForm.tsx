@@ -100,7 +100,7 @@ export function ContactForm() {
                 <CheckboxField
                   name="accepted_terms"
                   label="I want to get newsletters"
-                  value="accepted_terms"
+                  value={values.accepted_terms}
                   onChange={handleChange}
                 />
               </Form.CheckboxGroup>
