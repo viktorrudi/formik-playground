@@ -1,5 +1,4 @@
 import { Form as FormikForm, Formik, FormikHelpers } from "formik";
-import { useState } from "react";
 
 import { sendContactForm } from "../../../forms/contact/contactFormApiAdapter";
 import {
