@@ -28,6 +28,8 @@ I prefer nesting components in dot-syntax to make them more readable. This is al
 
 The business logic has been put under `src/forms` for the one and only form. The logic is then used in `src/components/ContactForm`, which is also consuming the UI from `src/ui`.
 
+The pattern followed is a very simple version of "The Clean Architecture" (an onion type architecture), but lacking a lot since the application created was so simple and not in need of much business logic.
+
 ## What's there todo here?
 
 There are a bunch of TODOs as the application is not fully completed. It's to serve as an early representation of a finished product.
