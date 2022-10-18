@@ -37,3 +37,21 @@ There are a bunch of TODOs as the application is not fully completed. It's to se
 Mainly components/forms/ContactForm should be refactored to smaller pieces. What I'd like to have done is a better abstraction to ease the implementation of new forms without havint to repeat yourself until your eyes and fingers bleed 🩸😭
 
 However, the hypothetical application may never use more than one form, making my abstraction hell a total unnecessity.
+
+### App problems
+
+- Form options (ContactForm.tsx) are not typed, and so the form could be submitted with incorrect types on runtime
+- UX issues
+  - The validation box shows up before you submit the form
+  - Its not visible which fields are required
+  - You can spam the form (sending multiple times)
+- Needs optimalisation improvements in ContactForm (All children re-rendering when Formik state updates)
+- Should be using more adapters
+  - Dont use Formik directly in the component, but rather an abstraction to it
+  - UI elements are directly importing from MUI, but that could go through an adapter layer
+- Refactoring
+  - Text values should be coming from a localization system instead of written directly in the files
+  - ContactForm.tsx should be refactored to allow for easier form creation and updates
+- Additional packages and configurations
+  - Prettier and Eslint
+  - Absolute path imports
